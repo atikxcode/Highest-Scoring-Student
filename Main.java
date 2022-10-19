@@ -11,7 +11,7 @@ public class Main {
         System.out.print("Enter the number of students: ");
         int numberOfStudents = input.nextInt();
 
-        int score, highest = 0, secondHigest = 0;
+        int score, highest = 0, secondHighest = 0;
         String name = "", student1 = "", student2 = "";
 
         System.out.println("Enter each student's name and score: ");
@@ -22,36 +22,35 @@ public class Main {
             score = input.nextInt();
 
             if(i==0){
+                // assign the first student as the highest scoring
                 highest = score;
                 student1 = name;
             }
             // Second student entered scored
             // higher than first student
             else if(i==1 && score > highest){
-                secondHigest = highest;
+                secondHighest = highest;
                 highest = score;
                 student2 = student1;
                 student1 = name;
             }
             else if(i==1){
-                secondHigest = score;
+                secondHighest = score;
                 student2 = name;
             }
-            else if(i > 1 && score > highest && score > secondHigest){
-                secondHigest = highest;
+            else if(i > 1 && score > highest && score > secondHighest){
+                secondHighest = highest;
                 student2 = student1;
                 highest = score;
                 student1 = name;
             }
-            else if(i > 1 && score > secondHigest){
+            else if(i > 1 && score > secondHighest){
                 student2 = name;
-                secondHigest = score;
+                secondHighest = score;
             }
         }
 
-        System.out.println("Higest scoring student: " + student1 + "\nSecond higest Scoring Student: " + student2);
-
-
+        System.out.println("Highest scoring student: " + student1 + "\nSecond highest Scoring Student: " + student2);
         }
     }
 
